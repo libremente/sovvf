@@ -1,6 +1,8 @@
 import { Routes, RouterModule }  from '@angular/router';
 import { Pages } from './pages.component';
 import { ModuleWithProviders } from '@angular/core';
+
+import { rigaElencoRichiesteDiAssistenzaComponent } from './rigaElencoRichiesteDiAssistenza/rigaElencoRichiesteDiAssistenza.component';
 // noinspection TypeScriptValidateTypes
 
 // export function loadChildren(path) { return System.import(path); };
@@ -31,9 +33,8 @@ export const routes: Routes = [
       //,{ path: 'forms', loadChildren: './forms/forms.module#FormsModule' }
       //,{ path: 'tables', loadChildren: './tables/tables.module#TablesModule' }
       //,{ path: 'maps', loadChildren: './maps/maps.module#MapsModule' }
+      
       ,{ path: 'rigaElencoRichiesteDiAssistenza',  loadChildren: './rigaElencoRichiesteDiAssistenza/rigaElencoRichiesteDiAssistenza.module#rigaElencoRichiesteDiAssistenzaModule' }      
-      ,{ path: 'new',  loadChildren: './schedaContatto/app.module#AppModule' }
-      ,{ path: 'schedaContatto',  loadChildren: './schedaContatto/app.module#AppModule' }      
     ]
   }
 

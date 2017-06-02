@@ -5,7 +5,7 @@ import { rigaElencoRichiesteDiAssistenzaComponent } from './rigaElencoRichiesteD
 const routes: Routes = [
   {
     path: '',
-    component:rigaElencoRichiesteDiAssistenzaComponent
+    component: rigaElencoRichiesteDiAssistenzaComponent
   }
 ];
 

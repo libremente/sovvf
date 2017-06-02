@@ -15,8 +15,7 @@ import { mappaSOVVF } from './mappaSOVVF';
 import { PieChartService } from './pieChart/pieChart.service';
 import { FeedService }     from './feed/feed.service';
 import { CalendarService } from './calendar/calendar.service';
-
-import { SharedModule } from '../shared.module';
+import { rigaElencoRichiesteDiAssistenzaModuleEarly } from "../rigaElencoRichiesteDiAssistenza/rigaElencoRichiesteDiAssistenza.early.module";
 
 @NgModule({
   imports: [
@@ -24,8 +23,8 @@ import { SharedModule } from '../shared.module';
     FormsModule,
     AppTranslationModule,
     NgaModule,
+    rigaElencoRichiesteDiAssistenzaModuleEarly,
     routing,
-    SharedModule    
   ],
   declarations: [
     PieChart,
