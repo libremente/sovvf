@@ -3,7 +3,9 @@ export enum StatoMeteo { Sole, SoleNuvola, Nuvoloso, Pioggerella, Pioggia, Tempo
 export class DatiBoxRiepilogo {
     constructor(
         public richiesteInCoda: number,
-        public richiesteInCorso: number,
+        public richiesteInViaggio: number,
+        public richiesteSulPosto: number,
+        public richiesteInRientro: number,
         public erroreBoxRichieste: string,
 
         public mezziImpegnati: number,
@@ -18,6 +20,10 @@ export class DatiBoxRiepilogo {
         public statoMeteo: StatoMeteo,
         public erroreBoxMeteo: string
     ) { }
+
+    public get richiesteInCorso(): number {
+        return this.richiesteInViaggio + this.richiesteSulPosto + this.richiesteInRientro;
+    }
 
     public get percentualeRichieste(): number {
         const mediaRichieste = 26;
@@ -37,7 +43,9 @@ export class DatiBoxRiepilogo {
     public static getFake(): DatiBoxRiepilogo {
         return new DatiBoxRiepilogo(
             2,
-            12,
+            3,
+            7,
+            2,
             null,
             14,
             26,
@@ -54,7 +62,7 @@ export class DatiBoxRiepilogo {
     public modificaRandom(): void {
         let rnd = Math.random();
 
-        if (rnd > .9) {
+        if (rnd > .95) {
             if (!this.erroreBoxMeteo) {
                 this.erroreBoxMeteo = "Simulazione perdita di connessione";
             } else {
@@ -76,9 +84,23 @@ export class DatiBoxRiepilogo {
         }
 
         if (rnd > .5) {
-            Math.random() > .5 ? this.richiesteInCorso++ : this.richiesteInCorso--;
-            if (this.richiesteInCorso < 0) //mai negativo
-                this.richiesteInCorso = 2;
+            if (Math.random() > .5) {
+                this.richiesteInViaggio++;
+            };
+
+            if ((this.richiesteInViaggio > 0) && (Math.random() > .5)) {
+                this.richiesteInViaggio--;
+                this.richiesteSulPosto++;
+            }
+
+            if ((this.richiesteSulPosto > 0) && (Math.random() > .5)) {
+                this.richiesteSulPosto--;
+                this.richiesteInRientro++;
+            }
+
+            if ((this.richiesteInRientro > 0) && (Math.random() > .5)) {
+                this.richiesteInRientro--;
+            }
         }
     }
 }

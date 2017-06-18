@@ -3,25 +3,47 @@
   <ba-card class="pie-chart-item-container col-xlg-3 col-lg-3 col-md-6 col-sm-12 col-12">
 
     <div class="pie-chart-item">
-      <div id="chartRichieste" class="chart" [attr.data-rel]="'#9F0000'" data-percent="60">
-        <span class="percent"></span>
-      </div>
-
-      <div class="description">
-        <div>Richieste</div>
-
-        <div class="description">
-          <span>In coda</span>
-          <span class="badge badge-pill badge-warning">{{ datiBoxRiepilogo.richiesteInCoda }}</span>
+      <div class="row">
+        <div id="chartRichieste" class="chart col-3" [attr.data-rel]="'#9F0000'" data-percent="60">
+          <span class="percent"></span>
         </div>
 
-        <div class="description">
-          <span>In corso</span>
-          <span class="badge badge-pill badge-info">{{ datiBoxRiepilogo.richiesteInCorso }}</span>
+        <div class="description col-3">
+          <div>Richieste</div>
+
+          <div class="description">
+            <span>In coda</span>
+            <span class="badge badge-pill badge-warning">{{ datiBoxRiepilogo.richiesteInCoda }}</span>
+          </div>
+
+          <div class="description">
+            <span>In corso</span>
+            <span class="badge badge-pill badge-info">{{ datiBoxRiepilogo.richiesteInCorso }}</span>
+          </div>
+        </div>
+
+        <div class="col-3">
+
+          <div class="description">
+            <span>In viaggio</span>
+            <span class="badge badge-pill badge-info">{{ datiBoxRiepilogo.richiesteInViaggio }}</span>
+          </div>
+
+          <div class="description">
+            <span>Sul posto</span>
+            <span class="badge badge-pill badge-info">{{ datiBoxRiepilogo.richiesteSulPosto }}</span>
+          </div>
+
+          <div class="description">
+            <span>In rientro</span>
+            <span class="badge badge-pill badge-info">{{ datiBoxRiepilogo.richiesteInRientro }}</span>
+          </div>
+        </div>
+
+        <div class="push-right col-3">
+          <i class="chart-icon fa fa-fire-extinguisher fa-3x"></i>
         </div>
       </div>
-
-      <i class="chart-icon fa fa-fire-extinguisher fa-3x"></i>
     </div>
 
   </ba-card>
@@ -89,10 +111,10 @@
             <span>Soleggiato</span>
           </div>
         </div>
-        
+
         <i class="chart-icon fa fa-sun-o fa-4x" style="color: #C0C000"></i>
       </div>
-      
+
       <div *ngIf="datiBoxRiepilogo.erroreBoxMeteo" class="text-center">
         <i class="fa fa-exclamation-triangle fa-4x text-warning" title="{{ datiBoxRiepilogo.erroreBoxMeteo }}"></i>
       </div>
