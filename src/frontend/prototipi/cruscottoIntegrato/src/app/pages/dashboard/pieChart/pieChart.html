@@ -4,7 +4,7 @@
 
     <div class="pie-chart-item">
       <div class="row">
-        <div id="chartRichieste" class="chart col-3" [attr.data-rel]="'#9F0000'" data-percent="60">
+        <div id="chartRichieste" class="chart col-2" [attr.data-rel]="'#9F0000'" data-percent="60">
           <span class="percent"></span>
         </div>
 
@@ -22,25 +22,25 @@
           </div>
         </div>
 
-        <div class="col-3">
+        <div class="col-5">
 
           <div class="description">
-            <span>In viaggio</span>
+            <span>Non presidiata</span>
             <span class="badge badge-pill badge-info">{{ datiBoxRiepilogo.richiesteInViaggio }}</span>
           </div>
 
           <div class="description">
-            <span>Sul posto</span>
+            <span>Presidiata</span>
             <span class="badge badge-pill badge-info">{{ datiBoxRiepilogo.richiesteSulPosto }}</span>
           </div>
 
           <div class="description">
-            <span>In rientro</span>
+            <span>In chiusura</span>
             <span class="badge badge-pill badge-info">{{ datiBoxRiepilogo.richiesteInRientro }}</span>
           </div>
         </div>
 
-        <div class="push-right col-3">
+        <div class="push-right col-2">
           <i class="chart-icon fa fa-fire-extinguisher fa-3x" title="Richieste di assistenza"></i>
         </div>
       </div>
