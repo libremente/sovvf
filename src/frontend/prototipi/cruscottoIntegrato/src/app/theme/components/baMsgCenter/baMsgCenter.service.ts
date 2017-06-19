@@ -5,8 +5,8 @@ export class BaMsgCenterService {
 
   private _notifications = [
     {
-      name: 'Romano',
-      text: 'Oggi c\'è la demo della nuova SALA OPERATIVA.',
+      name: 'Pompiere',
+      text: 'Oggi c\'è la demo della nuova SALA OPERATIVA [SOVVF].',
       time: 'today'
     },
     {
@@ -48,7 +48,7 @@ export class BaMsgCenterService {
 
   private _messages = [
     {
-      name: 'Romano',
+      name: 'Pompiere',
       text: 'Demo Sala Operativa VVF ...',
       time: 'today'
     },
