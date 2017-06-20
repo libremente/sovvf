@@ -31,8 +31,8 @@ import { SharedModule } from '../shared.module';
     PieChart,
     Feed,
     Calendar,
-    Dashboard,
-    mappaSOVVF
+    Dashboard
+    //,mappaSOVVF
   ],
   providers: [
     CalendarService,

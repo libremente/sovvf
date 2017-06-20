@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { rigaElencoRichiesteDiAssistenzaComponent } from './rigaElencoRichiesteDiAssistenza/rigaElencoRichiesteDiAssistenza.component';
+import { mappaSOVVF } from './dashboard/mappaSOVVF'
 
 @NgModule({
   imports: [
@@ -8,10 +9,12 @@ import { rigaElencoRichiesteDiAssistenzaComponent } from './rigaElencoRichiesteD
   
   declarations: [
       rigaElencoRichiesteDiAssistenzaComponent
+      ,mappaSOVVF
   ],
   
   exports: [
-    rigaElencoRichiesteDiAssistenzaComponent
+      rigaElencoRichiesteDiAssistenzaComponent
+      ,mappaSOVVF    
   ]
 })
 

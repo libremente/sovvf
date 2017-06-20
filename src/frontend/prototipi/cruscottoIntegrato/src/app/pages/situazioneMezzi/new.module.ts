@@ -14,11 +14,14 @@ import { TagAutistaComponent } from "./shared/components/tag-autista/tag-autista
 import { TagCapopartenzaComponent } from "./shared/components/tag-capopartenza/tag-capopartenza.component";
 import { MezzoinservizioComponent } from "app/pages/situazioneMezzi/mezzoinservizio/mezzoinservizio.component";
 
+import { SharedModule } from '../shared.module';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     routing
+    ,SharedModule    
   ],
   declarations: [
     AppComponent,
