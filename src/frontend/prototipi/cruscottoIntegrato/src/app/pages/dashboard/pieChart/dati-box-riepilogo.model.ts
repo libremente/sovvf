@@ -63,11 +63,9 @@ export class DatiBoxRiepilogo {
         let rnd = Math.random();
 
         if (rnd > .95) {
-            if (!this.erroreBoxMeteo) {
-                this.erroreBoxMeteo = "Simulazione perdita di connessione";
-            } else {
-                this.erroreBoxMeteo = null;
-            }
+            this.erroreBoxMeteo = "Simulazione perdita di connessione";
+        } else {
+            this.erroreBoxMeteo = null;
         }
 
         if (rnd > .5) {
