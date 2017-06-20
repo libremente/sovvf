@@ -1,11 +1,12 @@
 import { Routes, RouterModule } from '@angular/router';
 
-import { rigaElencoRichiesteDiAssistenzaComponent } from './rigaElencoRichiesteDiAssistenza.component';
+import { WrapperComponent } from "app/pages/rigaElencoRichiesteDiAssistenza/wrapper/wrapper.component";
 
 const routes: Routes = [
   {
     path: '',
-    component:rigaElencoRichiesteDiAssistenzaComponent
+    // component:rigaElencoRichiesteDiAssistenzaComponent
+    component: WrapperComponent
   }
 ];
 

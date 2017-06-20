@@ -91,7 +91,7 @@
         <div [formGroup]="formRagSoc">
           <div class="input-group" [ngClass]="{'has-warning':formValido }">
             <div class="input-group-addon" pTooltip="Cognome" tooltipPosition="bottom" data-animation="false" style="min-width: 50px;">
-            <i class="fa fa-address-card" aria-hidden="true"></i> </div> <input type="text" class="form-control" id="cognome"
+              <i class="fa fa-address-card" aria-hidden="true"></i> </div> <input type="text" class="form-control" id="cognome"
               placeholder="Cognome" formControlName="cognome">
           </div>
 
@@ -99,7 +99,7 @@
 
           <div class="input-group" [ngClass]="{'has-warning':formValido  } ">
             <div class="input-group-addon" pTooltip="Nome" tooltipPosition="bottom" data-animation="false" style="min-width: 50px;">
-            <i class="fa fa-address-card-o" aria-hidden="true"></i> </div> <input type="text" class="form-control" id="nome"
+              <i class="fa fa-address-card-o" aria-hidden="true"></i> </div> <input type="text" class="form-control" id="nome"
               placeholder="Nome" formControlName="nome">
           </div>
 
@@ -109,7 +109,7 @@
         <div [formGroup]="formRagSoc">
           <div class="input-group" [ngClass]="{'has-warning':formValido }">
             <div class="input-group-addon" pTooltip="Ragione sociale" tooltipPosition="bottom" data-animation="false" style="min-width: 50px;">
-            <i class="fa fa-industry" aria-hidden="true"></i>
+              <i class="fa fa-industry" aria-hidden="true"></i>
             </div>
             <input type="text" class="form-control" id="ragione_sociale" placeholder="Ragione sociale" value="{{formChiamataModel.ragione_sociale}}"
               formControlName="ragione_sociale">
@@ -129,15 +129,15 @@
           <!-- per la validazione chiamare il metofo formValido che ritorna boolean-->
           <div class="input-group">
             <div class="input-group-addon" pTooltip="Telefono" tooltipPosition="bottom" data-animation="false" style="min-width: 50px;">
-            <i class="fa fa-phone" aria-hidden="true"></i> </div> <input type="text" class="form-control" id="telefono" placeholder="Telefono"
-              formControlName="telefono">
+              <i class="fa fa-phone" aria-hidden="true"></i> </div> <input type="text" class="form-control" id="telefono"
+              placeholder="Telefono" formControlName="telefono">
           </div>
           <!-- -->
         </div>
         <br>
         <div class="input-group">
           <div class="input-group-addon" pTooltip="Coordinate" tooltipPosition="bottom" data-animation="false" style="min-width: 50px;">
-          <i class="fa fa-map-marker" aria-hidden="true"></i> </div> <input type="text" class="form-control" id="coordinate"
+            <i class="fa fa-map-marker" aria-hidden="true"></i> </div> <input type="text" class="form-control" id="coordinate"
             placeholder="Coordinate" readonly="" value="Lat. {{this.latitude | number : '2.3-3'}}, Long. {{this.longitude | number : '2.3-3'}}">          </div>
       </div>
       <div class="col-md-7">
@@ -168,7 +168,7 @@
         <div [formGroup]="myForm">
           <div class="input-group">
             <div class="input-group-addon" pTooltip="Ricerca indirizzo" tooltipPosition="bottom" data-animation="false" style="min-width: 50px;">
-            <i class="fa fa-map" aria-hidden="true"></i> </div>
+              <i class="fa fa-map" aria-hidden="true"></i> </div>
             <input placeholder="Ricerca indirizzo" autocorrect="on" autocapitalize="off" spellcheck="off" type="text" class="form-control"
               #search [formControl]="searchControl">
             <!--<input type="text" class="form-control" id="indirizzo" placeholder="Indirizzo" name="indirizzo" formControlName="indirizzo">-->
@@ -183,7 +183,7 @@
         <div [formGroup]="myForm">
           <div class="input-group">
             <div class="input-group-addon" pTooltip="Zona emergenza" tooltipPosition="bottom" data-animation="false" style="min-width: 50px;">
-            <i class="fa fa-map-pin" aria-hidden="true"></i> </div> <input type="text" class="form-control" id="zona_emergenza"
+              <i class="fa fa-map-pin" aria-hidden="true"></i> </div> <input type="text" class="form-control" id="zona_emergenza"
               placeholder="Zona emergenza" formControlName="zona_emergenza"> </div>
         </div>
       </div>
@@ -204,15 +204,15 @@
         <div [formGroup]="myForm">
           <div class="input-group">
             <div class="input-group-addon" pTooltip="Motivazione" tooltipPosition="bottom" data-animation="false" style="min-width: 50px;">
-            <i class="fa fa-commenting" aria-hidden="true"></i> </div> <textarea class="form-control" id="motivazione" style="resize: none;"
-              placeholder="Motivazione" formControlName="motivazione">Motivazione</textarea> </div>
+              <i class="fa fa-commenting" aria-hidden="true"></i> </div> <textarea class="form-control" id="motivazione"
+              style="resize: none;" placeholder="Motivazione" formControlName="motivazione">Motivazione</textarea> </div>
         </div>
       </div>
       <div class="col-md-6">
         <div [formGroup]="myForm">
           <div class="input-group">
             <div class="input-group-addon" pTooltip="Note indirizzo" tooltipPosition="bottom" data-animation="false" style="min-width: 50px;">
-            <i class="fa fa-commenting" aria-hidden="true"></i> </div> <textarea class="form-control" id="note_indirizzo"
+              <i class="fa fa-commenting" aria-hidden="true"></i> </div> <textarea class="form-control" id="note_indirizzo"
               style="resize: none;" placeholder="Note indirizzo" formControlName="note_indirizzo">Note indirizzo</textarea>            </div>
         </div>
       </div>
@@ -222,15 +222,15 @@
         <div [formGroup]="myForm">
           <div class="input-group">
             <div class="input-group-addon" pTooltip="Note pubbliche" tooltipPosition="bottom" data-animation="false" style="min-width: 50px;">
-            <i class="fa fa-bullhorn" aria-hidden="true"></i> </div> <textarea class="form-control" id="note_pubbliche" style="resize: none;"
-              placeholder="Note pubbliche" formControlName="note_pubbliche">Note pubbliche</textarea> </div>
+              <i class="fa fa-bullhorn" aria-hidden="true"></i> </div> <textarea class="form-control" id="note_pubbliche"
+              style="resize: none;" placeholder="Note pubbliche" formControlName="note_pubbliche">Note pubbliche</textarea>            </div>
         </div>
       </div>
       <div class="col-md-6">
         <div [formGroup]="myForm">
           <div class="input-group">
             <div class="input-group-addon" pTooltip="Note private" tooltipPosition="bottom" data-animation="false" style="min-width: 50px;">
-            <i class="fa fa-headphones " aria-hidden="true"></i> </div> <textarea class="form-control" id="note_private"
+              <i class="fa fa-headphones " aria-hidden="true"></i> </div> <textarea class="form-control" id="note_private"
               style="resize: none;" placeholder="Note private" formControlName="note_private">Note private</textarea> </div>
         </div>
       </div>

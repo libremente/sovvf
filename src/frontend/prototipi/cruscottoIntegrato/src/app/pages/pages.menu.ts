@@ -56,7 +56,7 @@ export const PAGES_MENU = [
         data: {
           menu: {
             title: 'general.menu.rigaElencoRichiesteDiAssistenza',
-            icon: 'fa fa-question',
+            icon: 'fa fa-hashtag',
             selected: false,
             expanded: false,
             order: 100,
