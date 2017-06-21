@@ -16,7 +16,7 @@ export class CalendarService {
         center: 'title',
         right: 'month,agendaWeek,agendaDay'
       },
-      defaultDate: '2016-03-08',
+      defaultDate: '2017-06-21',
       selectable: true,
       selectHelper: true,
       editable: true,
@@ -24,23 +24,24 @@ export class CalendarService {
       events: [
         {
           title: 'All Day Event',
-          start: '2016-03-01',
+          start: '2017-06-01',
           color: dashboardColors.silverTree
         },
         {
-          title: 'Long Event',
-          start: '2016-03-07',
-          end: '2016-03-10',
+          title: 'Corso Sala OPerativa',
+          start: '2017-06-07',
+          end: '2017-06-10',
           color: dashboardColors.blueStone
         },
         {
-          title: 'Dinner',
-          start: '2016-03-14T20:00:00',
+          title: 'Briefing CON',
+          start: '2017-06-14T08:00:00',
+          end: '2017-06-14T09:30:00',          
           color: dashboardColors.surfieGreen
         },
         {
-          title: 'Birthday Party',
-          start: '2016-04-01T07:00:00',
+          title: 'Demo SOVVF',
+          start: '2017-06-21T07:00:00',
           color: dashboardColors.gossip
         }
       ]
