@@ -1,6 +1,6 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { TreeItem, TreeviewItem } from 'ngx-treeview';
-import { Observable, of, Subscription } from 'rxjs';
+import { Observable, of, Subject, Subscription } from 'rxjs';
 import { Sede } from '../../../shared/model/sede.model';
 import { UnitaOperativaService } from '../unita-operativa-service/unita-operativa.service';
 import { UnitaAttualeService } from '../unita-attuale/unita-attuale.service';
@@ -17,6 +17,8 @@ export class UnitaOperativaTreeviewService implements OnDestroy {
     private unitaOperative: Sede[];
     private unitaAttuale: string[] = [];
     private treeViewSedi;
+    private treeItemSubject = new Subject<TreeItem>();
+    private treeViewItemSubject = new Subject<TreeviewItem[]>();
     private _truncate: any;
     _get: any;
 
@@ -33,11 +35,18 @@ export class UnitaOperativaTreeviewService implements OnDestroy {
                 private unitaAttualeS: UnitaAttualeService) {
         this._truncate = new AbbreviaSedi();
         this.unitaAttualeS.livelli = this.livelli;
-        this.unitaOperativaS.getUnitaOperative().subscribe(unitaOperative => {
-            this.unitaOperative = unitaOperative;
-            this.unitaAttualeS.unitaOC = unitaOperative;
-            this._get = new GetSediSelezionateTreeView(unitaOperative, this.createSediTreeItem());
-        });
+        this.subscription.add(
+            this.unitaOperativaS.getUnitaOperative().subscribe(unitaOperative => {
+                this.unitaOperative = unitaOperative;
+                this.unitaAttualeS.unitaOC = unitaOperative;
+                this.createSediTreeItem().subscribe(
+                    data => {
+                        this.treeViewSedi = data;
+                        this._get = new GetSediSelezionateTreeView(unitaOperative, data);
+                    }
+                );
+            })
+        );
         this.subscription.add(
             this.unitaAttualeS.getUnitaOperativaAttuale().subscribe(unitaAttuale => {
                 const sedi: string[] = [];
@@ -45,7 +54,7 @@ export class UnitaOperativaTreeviewService implements OnDestroy {
                     sedi.push(a.codice);
                 });
                 this.unitaAttuale = sedi;
-                this.treeViewSedi = this.createSediTreeItem();
+                //
             })
         );
     }
@@ -58,7 +67,7 @@ export class UnitaOperativaTreeviewService implements OnDestroy {
         return this._truncate.sedeString(this._get.sediSelezionate(this.unitaAttuale).testo);
     }
 
-    createSediTreeItem(): TreeItem {
+    createSediTreeItem(): Observable<TreeItem> {
         let countR = 0;
         const self = this.livelli;
         /**
@@ -158,11 +167,14 @@ export class UnitaOperativaTreeviewService implements OnDestroy {
                 allChecked: allChecked
             };
         }
+
+        const result = { text: 'CON', value: '0', collapsed: (countR === 0), children: direzioni };
+        this.treeItemSubject.next(result);
         /**
          * ritorno l'oggetto CON completo di tipo TreeItem
          * @type {TreeItem[]}
          */
-        return { text: 'CON', value: '0', collapsed: (countR === 0), children: direzioni };
+        return this.treeItemSubject.asObservable();
     }
 
     /**
@@ -170,7 +182,9 @@ export class UnitaOperativaTreeviewService implements OnDestroy {
      * @returns {Observable<TreeviewItem[]>}
      */
     getSedi(): Observable<TreeviewItem[]> {
-        return of([new TreeviewItem(this.treeViewSedi)]);
+        this.treeViewItemSubject.next([new TreeviewItem(this.treeViewSedi)]);
+        return this.treeViewItemSubject.asObservable();
+        // return of([new TreeviewItem(this.treeViewSedi)]);
     }
 
 }
